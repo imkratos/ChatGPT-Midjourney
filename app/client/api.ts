@@ -122,13 +122,19 @@ export function getHeaders() {
   return headers;
 }
 
-export function useGetMidjourneySelfProxyUrl(url:string){
+export function useGetMidjourneySelfProxyUrl(url:string,isFinished:boolean){
   const accessStore = useAccessStore.getState();
-  if(accessStore.useMjImgSelfProxy){
-    url = url.replace("https://cdn.discordapp.com", "/api/cnd-discordapp")
-    if(accessStore.accessCode){
-      url += (url.includes("?") ? "&" : "?") + "Authorization=" + accessStore.accessCode;
-    }
+  const cdnUrl = accessStore.cdnUrl;
+  const cdnMidUrl = accessStore.cdnMidUrl;
+
+  if(cdnMidUrl && !isFinished){
+    url = url.replace("https://cdn.discordapp.com", cdnMidUrl)
+  }else if(cdnUrl && isFinished){
+    url = url.replace("https://cdn.discordapp.com", cdnUrl)
+  }
+  
+  if(accessStore.accessCode){
+    url += (url.includes("?") ? "&" : "?") + "Authorization=" + accessStore.accessCode;
   }
   return url
 }

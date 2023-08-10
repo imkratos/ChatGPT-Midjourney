@@ -10,6 +10,8 @@ const DANGER_CONFIG = {
   needCode: serverConfig.needCode,
   hideUserApiKey: serverConfig.hideUserApiKey,
   enableGPT4: serverConfig.enableGPT4,
+  cdnUrl: serverConfig.cdnUrl,
+  cdnMidUrl: serverConfig.cdnMidUrl,
 };
 
 declare global {

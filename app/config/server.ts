@@ -10,6 +10,8 @@ declare global {
       VERCEL?: string;
       HIDE_USER_API_KEY?: string; // disable user's api key input
       DISABLE_GPT4?: string; // allow user to use gpt-4 or not
+      MIDJOURNEY_CDN_URL?: string; // cdn url
+      MIDJOURNEY_CDN_MID_URL?: string;
     }
   }
 }
@@ -44,5 +46,7 @@ export const getServerSideConfig = () => {
     isVercel: !!process.env.VERCEL,
     hideUserApiKey: !!process.env.HIDE_USER_API_KEY,
     enableGPT4: !process.env.DISABLE_GPT4,
+    cdnUrl: process.env.MIDJOURNEY_CDN_URL,
+    cdnMidUrl: process.env.MIDJOURNEY_CDN_MID_URL,
   };
 };

@@ -268,7 +268,7 @@ export function Settings() {
   useEffect(() => {
     // checks per minutes
     checkUpdate();
-    showUsage && checkUsage();
+    // showUsage && checkUsage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -483,7 +483,7 @@ export function Settings() {
           </ListItem>
         </List>
 
-        <List>
+        {/* <List>
           <ListItem
             title={`MidjourneyProxy ${Locale.Midjourney.Url}`}
             subTitle={Locale.Midjourney.SettingProxyCoverTip}
@@ -511,7 +511,7 @@ export function Settings() {
               }
             ></input>
           </ListItem>
-        </List>
+        </List> */}
 
         <List>
           {enabledAccessControl ? (
@@ -532,7 +532,7 @@ export function Settings() {
             <></>
           )}
 
-          {!accessStore.hideUserApiKey ? (
+          {/* {!accessStore.hideUserApiKey ? (
             <ListItem
               title={Locale.Settings.Token.Title}
               subTitle={Locale.Settings.Token.SubTitle}
@@ -546,9 +546,9 @@ export function Settings() {
                 }}
               />
             </ListItem>
-          ) : null}
+          ) : null} */}
 
-          <ListItem
+          {/* { <ListItem
             title={Locale.Settings.Usage.Title}
             subTitle={
               showUsage
@@ -570,7 +570,7 @@ export function Settings() {
                 onClick={() => checkUsage(true)}
               />
             )}
-          </ListItem>
+          </ListItem> } */}
         </List>
 
         <List>

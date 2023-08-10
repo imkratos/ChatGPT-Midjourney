@@ -14,6 +14,8 @@ export interface AccessControlStore {
   openaiUrl: string;
   midjourneyProxyUrl: string;
   useMjImgSelfProxy: boolean;
+  cdnUrl: string;
+  cdnMidUrl:string;
 
   updateToken: (_: string) => void;
   updateCode: (_: string) => void;
@@ -35,6 +37,8 @@ export const useAccessStore = create<AccessControlStore>()(
       openaiUrl: "/api/openai/",
       midjourneyProxyUrl: "",
       useMjImgSelfProxy: true,
+      cdnUrl:"",
+      cdnMidUrl:"",
 
       enabledAccessControl() {
         get().fetch();

@@ -274,7 +274,7 @@ export const useChatStore = create<ChatStore>()(
                                 isFinished = true;
                                 if (statusResJson.imageUrl) {
                                     let imgUrl = useGetMidjourneySelfProxyUrl(
-                                        statusResJson.imageUrl,
+                                        statusResJson.imageUrl,isFinished
                                     );
                                     botMessage.attr.imgUrl = imgUrl;
                                     botMessage.content =
@@ -324,7 +324,7 @@ export const useChatStore = create<ChatStore>()(
                                 statusResJson.imageUrl
                             ) {
                                 let imgUrl = useGetMidjourneySelfProxyUrl(
-                                    statusResJson.imageUrl,
+                                    statusResJson.imageUrl,isFinished
                                 );
                                 botMessage.attr.imgUrl = imgUrl;
                                 botMessage.content += `\n[![${taskId}](${imgUrl})](${imgUrl})`;

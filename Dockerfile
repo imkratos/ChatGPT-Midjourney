@@ -18,6 +18,8 @@ RUN apk update && apk add --no-cache git
 ENV OPENAI_API_KEY=""
 ENV MIDJOURNEY_PROXY_URL=""
 ENV CODE=""
+ENV MIDJOURNEY_CDN_URL=""
+ENV MIDJOURNEY_CDN_MID_URL=""
 
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
@@ -34,6 +36,8 @@ ENV PROXY_URL=""
 ENV OPENAI_API_KEY=""
 ENV MIDJOURNEY_PROXY_URL=""
 ENV CODE=""
+ENV MIDJOURNEY_CDN_URL=""
+ENV MIDJOURNEY_CDN_MID_URL=""
 
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
