@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: kratos/chatgpt-midjourney
+          images: kratos1937/chatgpt-midjourney
           tags: |
             type=raw,value=latest
             type=ref,event=tag
