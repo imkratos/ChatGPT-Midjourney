@@ -15,7 +15,6 @@
 </div>
 
 ## 功能支持
-🍭 PRO版本支持更强大的功能，**宝塔5分钟部署**，配置超简单，强大的在线后台管理及配置框架让你丝滑体验，**占用内存不到100M**，**包含对话+绘画账号池支持等等**，支持高并发：[💥 点我立即查看及体验PRO版本](https://github.com/Licoy/ChatGPT-Midjourney-Pro)，**最低1C1G的服务器就能流畅运行**。
 
 - [x] 原`ChatGPT-Next-Web`所有功能
 - [x] Midjourney `Imgine` 想象
@@ -34,15 +33,26 @@
 MIDJOURNEY_PROXY_URL=http://yourip:port
 ```
 > ⚠️注意：如果你使用的是Docker部署，那么这里的地址应该是`http://公网IP:port`，而不是`http://localhost:port`，因为Docker中的容器是隔离的，`localhost`指向的是容器内部的地址，而不是宿主机的地址。
-- 界面中
 
-![mj-6](./docs/images/mj-6.png)
 
 ### MIDJOURNEY_PROXY_API_SECRET
 （可选）`midjourney-proxy`的API请求密钥，防止他人恶意调用，可在环境变量中配置。
 
 ### CODE
 （可选）设置页面中的访问密码，防止被其他人轻易使用消耗余额
+
+
+### 以下为fork之后 新增参数  MIDJOURNEY_CDN_URL MIDJOURNEY_CDN_MID_URL
+
+MIDJOURNEY_CDN_URL
+```shell
+#增加了可以在环境变量中配置cdn.midjourney.com 的代理地址 可以使用aws方法，这样让自己的带宽消耗最小，图片生成之后就走aws的代理，生成中时用自己的代理
+MIDJOURNEY_CDN_URL=http://你的cdn代理地址.com:port
+
+#在使用域名cname aws代理地址时，中间的加载状态会没图显示不出来，可以用自己配置的反代代替
+MIDJOURNEY_CDN_MID_URL=http://你的cdn代理地址.com:port
+```
+
 
 ## 部署
 ### ChatGPT-Midjourney 前端部署
