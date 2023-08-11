@@ -51,6 +51,8 @@ MIDJOURNEY_CDN_URL=http://你的cdn代理地址.com:port
 
 #在使用域名cname aws代理地址时，中间的加载状态会没图显示不出来，可以用自己配置的反代代替
 MIDJOURNEY_CDN_MID_URL=http://你的cdn代理地址.com:port
+
+#如果以上两个都不配置，走以前的逻辑程序自身代理
 ```
 
 
