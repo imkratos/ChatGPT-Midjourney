@@ -15,6 +15,10 @@ import dynamic from "next/dynamic";
 import { Path, SlotID } from "../constant";
 import { ErrorBoundary } from "./error";
 
+import { useSearchParams } from 'next/navigation';
+
+import { useAccessStore } from "../store";
+
 import {
   HashRouter as Router,
   Routes,
@@ -146,7 +150,13 @@ function Screen() {
 
 export function Home() {
   useSwitchTheme();
-
+  const searchParams = useSearchParams()
+  const customerToken = searchParams.get("token")
+  const accessStore = useAccessStore();
+  if(customerToken){
+    accessStore.updateCode(customerToken);  
+  }
+  
   if (!useHasHydrated()) {
     return <Loading />;
   }
