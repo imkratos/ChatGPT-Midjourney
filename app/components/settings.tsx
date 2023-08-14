@@ -513,7 +513,7 @@ export function Settings() {
           </ListItem>
         </List> */}
 
-        <List>
+        {/* <List>
           {enabledAccessControl ? (
             <ListItem
               title={Locale.Settings.AccessCode.Title}
@@ -532,7 +532,7 @@ export function Settings() {
             <></>
           )}
 
-          {/* {!accessStore.hideUserApiKey ? (
+          {!accessStore.hideUserApiKey ? (
             <ListItem
               title={Locale.Settings.Token.Title}
               subTitle={Locale.Settings.Token.SubTitle}
@@ -546,9 +546,9 @@ export function Settings() {
                 }}
               />
             </ListItem>
-          ) : null} */}
+          ) : null}
 
-          {/* { <ListItem
+          { <ListItem
             title={Locale.Settings.Usage.Title}
             subTitle={
               showUsage
@@ -570,8 +570,8 @@ export function Settings() {
                 onClick={() => checkUsage(true)}
               />
             )}
-          </ListItem> } */}
-        </List>
+          </ListItem> }
+        </List> */}
 
         <List>
           <ListItem
