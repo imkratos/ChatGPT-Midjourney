@@ -408,7 +408,14 @@ export const useChatStore = create<ChatStore>()(
                 ) {
                     botMessage.model = "midjourney";
                     const startFn = async () => {
-                        const prompt = content.substring(3).trim();
+                        let prompt = content.substring(3).trim();
+
+                        if(content.includes("fast")){
+                            prompt = content.replace("fast","relax");
+                        }else{
+                            prompt = content + " --relax";;
+                        }
+                        
                         let action: string = "IMAGINE";
                         const firstSplitIndex = prompt.indexOf("::");
                         if (firstSplitIndex > 0) {
