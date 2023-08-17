@@ -410,12 +410,12 @@ export const useChatStore = create<ChatStore>()(
                     const startFn = async () => {
                         let prompt = content.substring(3).trim();
 
-                        if(content.includes("fast")){
-                            prompt = content.replace("fast","relax");
+                        if(prompt.includes("fast")){
+                            prompt = prompt.replace("fast","relax");
                         }else{
-                            prompt = content + " --relax";;
+                            prompt = prompt + " --relax";;
                         }
-                        
+
                         let action: string = "IMAGINE";
                         const firstSplitIndex = prompt.indexOf("::");
                         if (firstSplitIndex > 0) {
