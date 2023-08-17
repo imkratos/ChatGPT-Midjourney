@@ -410,12 +410,6 @@ export const useChatStore = create<ChatStore>()(
                     const startFn = async () => {
                         let prompt = content.substring(3).trim();
 
-                        if(prompt.includes("fast")){
-                            prompt = prompt.replace("fast","relax");
-                        }else{
-                            prompt = prompt + " --relax";;
-                        }
-
                         let action: string = "IMAGINE";
                         const firstSplitIndex = prompt.indexOf("::");
                         if (firstSplitIndex > 0) {
@@ -459,6 +453,12 @@ export const useChatStore = create<ChatStore>()(
                             };
                             switch (action) {
                                 case "IMAGINE": {
+
+                                    if(prompt.includes("fast")){
+                                        prompt = prompt.replace("fast","relax");
+                                    }else{
+                                        prompt = prompt + " --relax";;
+                                    }
                                     res = await reqFn(
                                         "submit/imagine",
                                         "POST",
